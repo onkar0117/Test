@@ -1,0 +1,22 @@
+<form #ZipForm="ngForm" id="zipForm" (ngSubmit)="searchZip(ZipForm);">
+    <div class="row">
+
+
+        <div>
+            <div>
+                <label for="postalCode" class="control-label">Postal Code</label>
+                <input id="postalCode" type="text" class="form-control" name="postalCode" number
+                    [(ngModel)]="postalCode">
+
+            </div>
+            <div *ngIf="postalCode != null && zipDetail.City != null && zipDetail.StateProvinceCode != null">
+                {{postalCode}} => {{ zipDetail.City}} , {{ zipDetail.StateProvinceCode}}
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom_btn">
+        <button type="submit">Search</button>
+        <button type="button" (click)="Clear($event)">Reset</button>
+    </div>
+</form>
