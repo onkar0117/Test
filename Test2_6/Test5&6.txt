@@ -1,0 +1,67 @@
+------------------------------------------------------
+Question 
+------------------------------------------------------
+
+var autoCompleteStr = "";
+var arrPromise = [];
+for (var i = 0; i < 5; i++) {
+  autoCompleteStr += (i + 10).toString(36);
+  console.log("User entered: ", autoCompleteStr)
+  var promiseObj = new Promise(function(resolve, reject) {
+    var timeTaken = Math.round(Math.random() * 1000);
+    setTimeout(resolve, timeTaken, [autoCompleteStr, timeTaken]);
+  });
+  arrPromise.push(promiseObj)
+}
+for (var indx in arrPromise) {
+  arrPromise[indx].then(function(values) {
+    console.log(values);
+  });
+}
+
+
+------------------------------------------------------
+Test 5
+------------------------------------------------------
+
+var autoCompleteStr = "";
+var arrPromise = [];
+for (var i = 0; i < 5; i++) {
+  autoCompleteStr += (i + 10).toString(36);
+  console.log("User entered: ", autoCompleteStr)
+  var promiseObj = new Promise(function(resolve, reject) {
+    var timeTaken = Math.round(Math.random() * 1000);
+    setTimeout(resolve, timeTaken, [autoCompleteStr, timeTaken]);
+  });
+  arrPromise.push(promiseObj)
+}
+Promise.all(arrPromise).then((values) => {
+  console.log(values);
+});
+
+------------------------------------------------------
+Test 6
+------------------------------------------------------
+
+async function Main(){
+
+	var autoCompleteStr = "";
+	var arrPromise = [];
+	for (var i = 0; i < 5; i++) {
+	  autoCompleteStr += (i + 10).toString(36);
+	  console.log("User entered: ", autoCompleteStr)
+	  var promiseObj = new Promise(function(resolve, reject) {
+		var timeTaken = Math.round(Math.random() * 1000);
+		setTimeout(resolve, timeTaken, [autoCompleteStr, timeTaken]);
+	  });
+	  arrPromise.push(promiseObj)
+	}
+  for (var indx in arrPromise) {
+ await arrPromise[indx].then(function(values) {
+    console.log(values);
+  });
+}
+
+}
+
+Main();

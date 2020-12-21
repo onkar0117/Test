@@ -1,0 +1,3 @@
+Please install npm pakage before checking test1 MyZipApp.
+cmd=>  npm install 
+cmd=> ng serve --o

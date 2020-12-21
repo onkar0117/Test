@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test 2</title>
+</head>
+<body>
+<script>
+var count =0;
+function Ok_Click() {
+count=count +1;
+  document.getElementById("divCount").innerHTML=count;
+}
+function Clear_Click() {
+count=0;
+  document.getElementById("divCount").innerHTML=count;
+}
+</script>
+
+<input type="button" id="btnOk" value="Add" onclick="Ok_Click()">
+<input type="button" id="btnClear" value="Clear" onclick="Clear_Click()">
+</br>
+Click count : <div  id="divCount" >0</div>
+
+</body>
+</html>

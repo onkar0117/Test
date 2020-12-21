@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test 4</title>
+</head>
+<body>
+<script>
+
+function Reverse_Click() {
+var str = document.getElementById("txtSentence").value.trim();
+var rev='';
+ if (str != ''){
+//document.getElementById("lblReverse").innerHTML = str.split(/\s/).reverse().join(" ");
+document.getElementById("lblReverse").innerHTML ='';
+x = str.split(" ");
+for (i = x.length - 1; i >=0; i--) {
+  for (j = 0; j < x[i].length ; j++) {
+    
+   rev = rev + x[i].charAt(j);
+  }
+ rev  = rev + ' ';
+}
+ }
+ else
+ {
+ rev ='';
+ }
+ 
+ document.getElementById("lblReverse").innerHTML =rev;
+}
+function Clear_Click() {
+
+  document.getElementById("txtSentence").value='';
+}
+</script>
+<input type="text" id="txtSentence" />
+<input type="button" id="btnReverse" value="Reverse" onclick="Reverse_Click()"/>
+<input type="button" id="btnClear" value="Clear" onclick="Clear_Click()"/>
+</br>
+Reverse sentence : <div  id="lblReverse" ></div>
+
+</body>
+</html>
